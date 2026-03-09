@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.axelpalacios.cardgame24.Controller">
    <top>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
-          <Button mnemonicParsing="false" prefWidth="200.0" text="Find Solution" />
-            <TextField />
-            <Button mnemonicParsing="false" text="Refresh" />
+            <Button onAction="#findSolution" text="Find Solution" />
+            <TextField fx:id="answerKey" />
+            <Button mnemonicParsing="false" onAction="#refreshCards" prefWidth="200.0" text="Refresh" />
         </buttons>
          <BorderPane.margin>
             <Insets right="5.0" />
@@ -30,8 +30,8 @@
                   <Insets left="45.0" />
                </padding>
             </Label>
-            <TextField />
-          <Button mnemonicParsing="false" text="Verify" />
+            <TextField fx:id="userAnswer" />
+          <Button mnemonicParsing="false" onAction="#verifyAnswer" text="Verify" />
         </buttons>
          <BorderPane.margin>
             <Insets right="5.0" />
@@ -39,12 +39,12 @@
       </ButtonBar>
    </bottom>
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="273.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="270.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="267.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card1" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card2" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card3" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card4" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
    </center>
